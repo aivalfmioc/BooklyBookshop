@@ -1,0 +1,12 @@
+<!-- container to inject the Okta Sign-In Widget -->
+<div class="login-status-header">
+
+    <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
+        Wellcome back {{ userFullName }}
+    </div>
+    <button *ngIf="isAuthenticated" routerLink="/order-history" class="security-btn ms-1">Orders</button> 
+    <button *ngIf="isAuthenticated" routerLink="/wishlist" class="security-btn ms-1">Wishlist</button> 
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn ms-1">Login</button>
+    <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn ms-1" margin-right="10px" padding-right="110px" margin-top="20px">Log out</button>
+  
+</div>
